@@ -3,6 +3,11 @@ var noseY = 0;
 
 function preload() {
 	world_start = loadSound("world_start.wav");
+	mario_jump = loadSound("jump.wav");
+	mario_coin = loadSound("coin.wav");
+	mario_gameover = loadSound("gameover.wav");
+	mario_kick = loadSound("kick.wav");
+	mario_die = loadSound("mariodie.wav");
 	setSprites();
 	MarioAnimation();
 }
@@ -23,10 +28,8 @@ function modelLoaded() {
 	console.log("model loaded");
 }
 
-function gotPoses(error, results) {
-	if(error){
-		console.log(error);
-	}
+function gotPoses(results) {
+
 
 	if(results.length > 0){
 		console.log(results);
